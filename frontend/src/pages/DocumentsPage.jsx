@@ -1,158 +1,184 @@
 import React, { useState } from 'react';
-import { Button, Upload, Modal, message, Typography } from 'antd';
+import { Button, Upload, Modal, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
-const { Title } = Typography;
-
+// 定义一个非常简单的文档管理页面，专注于文件上传功能
 const DocumentsPage = () => {
-  const [uploadModalVisible, setUploadModalVisible] = useState(false);
+  // 控制上传模态框的显示/隐藏状态
+  const [isUploadModalVisible, setIsUploadModalVisible] = useState(false);
+  // 存储上传的文件列表
   const [fileList, setFileList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // 上传过程中的加载状态
+  const [isUploading, setIsUploading] = useState(false);
 
-  // 上传前检查
-  const beforeUpload = (file) => {
-    const validTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/msword', 
-                       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                       'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-    
-    if (!validTypes.includes(file.type)) {
-      message.error('仅支持 PDF, JPG, PNG, Word, Excel 格式的文件!');
-      return Upload.LIST_IGNORE;
-    }
-    
-    const validSize = file.size / 1024 / 1024 < 10; // 10MB
-    if (!validSize) {
-      message.error('文件大小不能超过 10MB!');
-      return Upload.LIST_IGNORE;
-    }
-    
-    return false; // 手动上传
+  // 打开上传模态框
+  const openUploadModal = () => {
+    setIsUploadModalVisible(true);
   };
 
-  // 处理文件变化
+  // 关闭上传模态框
+  const closeUploadModal = () => {
+    setIsUploadModalVisible(false);
+    setFileList([]); // 关闭时清空文件列表
+  };
+
+  // 文件类型和大小验证
+  const beforeUpload = (file) => {
+    // 允许的文件类型
+    const allowedTypes = [
+      'application/pdf',
+      'image/jpeg',
+      'image/png',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/vnd.ms-excel',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    ];
+    
+    // 检查文件类型
+    if (!allowedTypes.includes(file.type)) {
+      message.error(`文件类型不支持: ${file.name}`);
+      return Upload.LIST_IGNORE; // 忽略不支持的文件
+    }
+    
+    // 检查文件大小（10MB限制）
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (file.size > maxSize) {
+      message.error(`文件大小超过限制: ${file.name}`);
+      return Upload.LIST_IGNORE; // 忽略过大的文件
+    }
+    
+    return false; // 阻止自动上传，使用手动上传
+  };
+
+  // 文件列表变化处理
   const handleFileChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
 
-  // 上传文档
-  const handleUpload = async () => {
+  // 执行文件上传
+  const handleUpload = () => {
     if (fileList.length === 0) {
-      message.warning('请选择要上传的文件');
+      message.warning('请先选择文件');
       return;
     }
     
-    setLoading(true);
-    try {
-      // 模拟上传延迟
-      setTimeout(() => {
-        message.success('文件上传成功');
-        setFileList([]);
-        setUploadModalVisible(false);
-        setLoading(false);
-      }, 1500);
-    } catch (error) {
-      console.error('文件上传失败:', error);
-      message.error('文件上传失败');
-      setLoading(false);
-    }
+    setIsUploading(true);
+    
+    // 模拟上传过程
+    setTimeout(() => {
+      message.success('文件上传成功！');
+      setIsUploading(false);
+      closeUploadModal();
+    }, 1500);
   };
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f0f2f5', minHeight: '100vh' }}>
-      {/* 页面标题和上传按钮区域 - 固定在顶部 */}
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: '#f0f2f5', 
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      {/* 页面标题区域 */}
+      <div style={{ marginBottom: '30px' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#333', margin: 0 }}>
+          文档管理
+        </h1>
+        <p style={{ color: '#666', marginTop: '8px' }}>上传文档以进行信息提取</p>
+      </div>
+      
+      {/* 主要内容区域 */}
       <div style={{ 
-        position: 'fixed', 
-        top: '64px', 
-        left: '200px', 
-        right: '0', 
-        padding: '20px', 
-        backgroundColor: 'white', 
-        zIndex: 1000,
-        borderBottom: '1px solid #f0f0f0'
+        flex: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '40px'
       }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Title level={4} style={{ margin: 0 }}>文档管理</Title>
+        {/* 上传按钮区域 - 居中显示 */}
+        <div style={{ 
+          textAlign: 'center',
+          backgroundColor: 'white',
+          padding: '60px',
+          borderRadius: '12px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+        }}>
+          <h2 style={{ fontSize: '24px', marginBottom: '30px', color: '#333' }}>
+            点击下方按钮上传文档
+          </h2>
           
-          {/* 大尺寸、颜色鲜明的上传按钮 */}
-          <Button 
-            type="primary" 
-            icon={<UploadOutlined />} 
-            onClick={() => setUploadModalVisible(true)}
+          {/* 明显的上传按钮 */}
+          <Button
+            type="primary"
+            icon={<UploadOutlined />}
             size="large"
-            style={{ 
+            onClick={openUploadModal}
+            style={{
               backgroundColor: '#1890ff',
               borderColor: '#1890ff',
-              fontSize: '16px',
-              padding: '10px 24px',
-              fontWeight: 'bold'
+              fontSize: '18px',
+              padding: '12px 32px',
+              borderRadius: '6px',
+              boxShadow: '0 4px 12px rgba(24, 144, 255, 0.3)'
             }}
           >
             上传待提取文件
           </Button>
-        </div>
-      </div>
-
-      {/* 主要内容区域 - 添加足够的顶部边距避免被固定头部遮挡 */}
-      <div style={{ marginTop: '120px', padding: '0 20px' }}>
-        <div style={{ 
-          backgroundColor: 'white', 
-          padding: '40px', 
-          borderRadius: '8px',
-          textAlign: 'center'
-        }}>
-          <Title level={3} style={{ color: '#1890ff' }}>文档上传指南</Title>
-          <p style={{ fontSize: '16px', color: '#666', margin: '20px 0' }}>
-            点击上方的「上传待提取文件」按钮，选择您需要提取信息的文档。
-          </p>
-          <p style={{ fontSize: '14px', color: '#999' }}>
-            支持 PDF、JPG、PNG、Word 和 Excel 格式，单个文件最大 10MB。
+          
+          <p style={{ marginTop: '20px', color: '#999', fontSize: '14px' }}>
+            支持 PDF、JPG、PNG、Word、Excel 格式，单个文件最大 10MB
           </p>
         </div>
       </div>
-
-      {/* 上传文档弹窗 */}
+      
+      {/* 上传文件模态框 - 简单直接的实现 */}
       <Modal
-        title="上传待提取文件"
-        open={uploadModalVisible}
-        onCancel={() => {
-          setUploadModalVisible(false);
-          setFileList([]);
-        }}
+        title="上传文件"
+        open={isUploadModalVisible}
+        onCancel={closeUploadModal}
         footer={[
-          <Button key="cancel" onClick={() => {
-            setUploadModalVisible(false);
-            setFileList([]);
-          }}>
+          <Button key="cancel" onClick={closeUploadModal}>
             取消
           </Button>,
-          <Button key="upload" type="primary" onClick={handleUpload} loading={loading}>
-            上传
+          <Button 
+            key="upload" 
+            type="primary" 
+            onClick={handleUpload}
+            loading={isUploading}
+          >
+            确认上传
           </Button>
         ]}
         width={600}
+        centered
       >
-        <Upload.Dragger
-          multiple
-          fileList={fileList}
-          beforeUpload={beforeUpload}
-          onChange={handleFileChange}
-          customRequest={() => {}}
-          style={{ 
-            padding: '40px', 
-            border: '2px dashed #1890ff',
-            borderRadius: '8px'
-          }}
-        >
-          <p className="ant-upload-drag-icon">
-            <UploadOutlined style={{ fontSize: '48px', color: '#1890ff' }} />
-          </p>
-          <p className="ant-upload-text" style={{ fontSize: '16px', marginTop: '16px' }}>
-            点击或拖拽文件到此区域上传
-          </p>
-          <p className="ant-upload-hint" style={{ marginTop: '16px' }}>
-            支持单个或批量上传，仅支持 PDF, JPG, PNG, Word, Excel 格式，最大 10MB
-          </p>
-        </Upload.Dragger>
+        <div style={{ padding: '20px 0' }}>
+          <Upload.Dragger
+            fileList={fileList}
+            beforeUpload={beforeUpload}
+            onChange={handleFileChange}
+            multiple
+            customRequest={() => {}}
+            showUploadList={true}
+            style={{
+              border: '2px dashed #d9d9d9',
+              borderRadius: '6px',
+              padding: '40px 20px'
+            }}
+          >
+            <p className="ant-upload-drag-icon">
+              <UploadOutlined style={{ fontSize: '48px', color: '#1890ff' }} />
+            </p>
+            <p className="ant-upload-text" style={{ fontSize: '16px', marginTop: '16px' }}>
+              点击或拖拽文件到此处上传
+            </p>
+            <p className="ant-upload-hint" style={{ marginTop: '16px' }}>
+              支持单个或批量上传，仅支持 PDF, JPG, PNG, Word, Excel 格式，最大 10MB
+            </p>
+          </Upload.Dragger>
+        </div>
       </Modal>
     </div>
   );
