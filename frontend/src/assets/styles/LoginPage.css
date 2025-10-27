@@ -1,0 +1,87 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-header {
+  text-align: center;
+  padding: 0 24px;
+}
+
+.login-title {
+  color: #1890ff;
+  margin-bottom: 8px !important;
+  font-weight: 600;
+}
+
+.login-subtitle {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.login-divider {
+  margin: 24px 0;
+}
+
+.login-form {
+  padding: 0 24px 24px;
+}
+
+.login-button {
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #1890ff 0%, #36cfc9 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.4);
+}
+
+.quick-login-section {
+  text-align: center;
+  padding: 0 24px 24px;
+}
+
+.quick-login-button {
+  color: #1890ff;
+}
+
+.quick-login-button:hover {
+  color: #40a9ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%;
+    margin: 0 16px;
+  }
+}

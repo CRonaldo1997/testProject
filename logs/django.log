@@ -1,0 +1,62 @@
+INFO 2025-10-26 21:37:54,679 autoreload 21256 4724 Watching for file changes with StatReloader
+WARNING 2025-10-26 21:38:00,285 log 21256 14900 Not Found: /
+WARNING 2025-10-26 21:38:00,286 basehttp 21256 14900 "GET /?ide_webview_request_time=1761485879961 HTTP/1.1" 404 2513
+WARNING 2025-10-26 21:38:00,315 log 21256 14900 Not Found: /@vite/client
+WARNING 2025-10-26 21:38:00,315 basehttp 21256 14900 "GET /@vite/client HTTP/1.1" 404 2528
+WARNING 2025-10-26 21:38:04,376 log 21256 21292 Not Found: /
+WARNING 2025-10-26 21:38:04,378 basehttp 21256 21292 "GET /?ide_webview_request_time=1761485884369 HTTP/1.1" 404 2513
+WARNING 2025-10-26 21:38:04,437 log 21256 21292 Not Found: /@vite/client
+WARNING 2025-10-26 21:38:04,437 basehttp 21256 21292 "GET /@vite/client HTTP/1.1" 404 2528
+INFO 2025-10-26 21:38:18,363 basehttp 21256 21292 "GET /admin/?ide_webview_request_time=1761485898349 HTTP/1.1" 302 0
+INFO 2025-10-26 21:38:18,378 basehttp 21256 21292 "GET /admin/login/?next=/admin/%3Fide_webview_request_time%3D1761485898349 HTTP/1.1" 200 4269
+INFO 2025-10-26 21:38:18,450 basehttp 21256 21292 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-26 21:38:18,452 basehttp 21256 14492 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-26 21:38:18,452 basehttp 21256 15832 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-26 21:38:18,454 basehttp 21256 14816 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-26 21:38:18,455 basehttp 21256 15196 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-26 21:38:18,455 basehttp 21256 18680 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-26 21:38:18,456 basehttp 21256 18680 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-10-26 21:38:18,478 log 21256 18680 Not Found: /@vite/client
+WARNING 2025-10-26 21:38:18,478 basehttp 21256 18680 "GET /@vite/client HTTP/1.1" 404 2528
+WARNING 2025-10-26 21:38:55,392 log 21256 18680 Not Found: /api/v1/
+WARNING 2025-10-26 21:38:55,393 basehttp 21256 18680 "GET /api/v1/?ide_webview_request_time=1761485935389 HTTP/1.1" 404 3398
+WARNING 2025-10-26 21:38:55,419 log 21256 18680 Not Found: /@vite/client
+WARNING 2025-10-26 21:38:55,419 basehttp 21256 18680 "GET /@vite/client HTTP/1.1" 404 2528
+INFO 2025-10-26 21:39:31,837 autoreload 21256 4724 D:\Projects\testProject\documents\urls.py changed, reloading.
+INFO 2025-10-26 21:39:32,170 autoreload 20688 19772 Watching for file changes with StatReloader
+INFO 2025-10-26 21:39:56,879 autoreload 20688 19772 D:\Projects\testProject\extractions\urls.py changed, reloading.
+INFO 2025-10-26 21:39:57,195 autoreload 15896 15868 Watching for file changes with StatReloader
+WARNING 2025-10-26 21:40:18,628 log 15896 20896 Forbidden: /api/v1/documents/
+WARNING 2025-10-26 21:40:18,628 basehttp 15896 20896 "GET /api/v1/documents/?ide_webview_request_time=1761486018605 HTTP/1.1" 403 5143
+INFO 2025-10-26 21:40:18,701 basehttp 15896 21144 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-10-26 21:40:18,702 basehttp 15896 2164 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-10-26 21:40:18,703 basehttp 15896 21144 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-10-26 21:40:18,704 basehttp 15896 3816 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-10-26 21:40:18,704 basehttp 15896 7592 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-10-26 21:40:18,705 basehttp 15896 2164 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-10-26 21:40:18,707 basehttp 15896 21144 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-10-26 21:40:18,707 basehttp 15896 3816 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-10-26 21:40:18,707 basehttp 15896 7592 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-10-26 21:40:18,708 basehttp 15896 10204 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-10-26 21:40:18,708 basehttp 15896 20896 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-10-26 21:40:18,718 basehttp 15896 20896 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2025-10-26 21:40:18,745 log 15896 20896 Not Found: /@vite/client
+WARNING 2025-10-26 21:40:18,746 basehttp 15896 20896 "GET /@vite/client HTTP/1.1" 404 2528
+INFO 2025-10-26 21:43:18,936 basehttp 15896 14488 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-26 21:43:18,937 basehttp 15896 18936 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-26 21:43:18,945 basehttp 15896 15540 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+INFO 2025-10-26 21:43:18,947 basehttp 15896 15540 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+INFO 2025-10-26 21:43:19,031 basehttp 15896 18936 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-26 21:43:19,031 basehttp 15896 9040 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-26 21:43:19,031 basehttp 15896 15540 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-26 21:43:19,032 basehttp 15896 9040 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-26 21:43:19,034 basehttp 15896 15540 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-26 21:43:19,034 basehttp 15896 18936 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-26 21:43:19,035 basehttp 15896 9040 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-10-26 21:43:19,062 log 15896 9040 Not Found: /favicon.ico
+WARNING 2025-10-26 21:43:19,062 basehttp 15896 9040 "GET /favicon.ico HTTP/1.1" 404 2525
+INFO 2025-10-26 21:46:09,647 basehttp 15896 22112 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-26 21:46:09,656 basehttp 15896 22112 "GET /admin/ HTTP/1.1" 200 6077
+INFO 2025-10-26 21:46:09,666 basehttp 15896 22112 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-26 21:46:09,669 basehttp 15896 22112 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-26 21:46:09,669 basehttp 15896 22100 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380

@@ -1,0 +1,146 @@
+.homepage-container {
+  padding: 24px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 64px);
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-description {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.statistics-row {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.progress-card,
+.activities-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.progress-list {
+  padding: 8px 0;
+}
+
+.progress-item {
+  margin-bottom: 20px;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-name {
+  font-weight: 500;
+  color: #262626;
+}
+
+.progress-value {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.activity-item {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.activity-item:hover {
+  background-color: #fafafa;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-title {
+  display: flex;
+  align-items: center;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.activity-time {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.time-icon {
+  color: #8c8c8c;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.time-text {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .homepage-container {
+    padding: 16px;
+  }
+  
+  .page-header {
+    margin-bottom: 16px;
+  }
+  
+  .statistics-row {
+    margin-bottom: 16px;
+  }
+  
+  .progress-item {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-container {
+    padding: 12px;
+  }
+  
+  .activity-title {
+    flex-wrap: wrap;
+  }
+  
+  .ml-2 {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}

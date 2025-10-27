@@ -1,0 +1,261 @@
+.extractions-page-container {
+  padding: 24px;
+  min-height: calc(100vh - 120px);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-description {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.extractions-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-input {
+  width: 320px;
+}
+
+.filters-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-select {
+  min-width: 180px;
+}
+
+.extractions-table {
+  margin-top: 16px;
+}
+
+.extractions-table .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  text-align: left;
+}
+
+.document-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.document-icon {
+  color: #1890ff;
+  font-size: 18px;
+}
+
+/* 详情弹窗样式 */
+.extraction-details {
+  padding: 8px 0;
+}
+
+.detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 24px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.detail-item strong {
+  min-width: 80px;
+}
+
+.detail-item .ant-tag {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.detail-item .ant-progress {
+  margin-bottom: 0;
+  min-width: 120px;
+}
+
+.fields-section {
+  margin-top: 24px;
+}
+
+.fields-section .ant-table {
+  margin-top: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .extractions-page-container {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .filters-row {
+    justify-content: center;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .detail-item {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .document-title {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .extractions-table .ant-table-column-title {
+    font-size: 12px;
+  }
+
+  .extractions-table .ant-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .detail-item strong {
+    min-width: auto;
+  }
+}
+
+/* 动画效果 */
+.ant-btn {
+  transition: all 0.3s ease;
+}
+
+.ant-table-row {
+  transition: background-color 0.2s ease;
+}
+
+.ant-table-row:hover {
+  background-color: #fafafa !important;
+}
+
+.ant-tag {
+  transition: all 0.3s ease;
+}
+
+/* 自定义进度条样式 */
+.ant-progress-line {
+  margin-bottom: 0;
+}
+
+.ant-progress-bg {
+  border-radius: 10px;
+}
+
+.ant-progress-text {
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* 表格列宽度优化 */
+.ant-table-column-key-fieldCount,
+.ant-table-column-key-action {
+  width: 100px;
+  text-align: center;
+}
+
+.ant-table-column-key-status {
+  width: 100px;
+  text-align: center;
+}
+
+.ant-table-column-key-confidence {
+  width: 120px;
+  text-align: center;
+}
+
+/* 模态框样式优化 */
+.ant-modal-content {
+  border-radius: 8px;
+}
+
+.ant-modal-header {
+  border-bottom: none;
+  padding: 24px 24px 16px;
+}
+
+.ant-modal-body {
+  padding: 16px 24px 24px;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 表单样式优化 */
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.ant-input[disabled] {
+  background-color: #f5f5f5;
+  color: #8c8c8c;
+}`}}}

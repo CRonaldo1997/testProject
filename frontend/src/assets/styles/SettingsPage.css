@@ -1,0 +1,402 @@
+.settings-page-container {
+  padding: 24px;
+  min-height: calc(100vh - 120px);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-description {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.settings-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.settings-form {
+  padding: 24px 0 0;
+}
+
+.settings-sections {
+  background: transparent;
+}
+
+.settings-panel {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.settings-panel .ant-collapse-header {
+  padding: 16px 24px;
+  background-color: #fafafa;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.settings-panel .ant-collapse-content-box {
+  padding: 24px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.settings-item {
+  margin-bottom: 0;
+}
+
+/* Logo上传区域 */
+.logo-upload-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.logo-upload-section .ant-upload {
+  background-color: #fafafa;
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.logo-upload-section .ant-upload:hover {
+  border-color: #1890ff;
+  background-color: #e6f7ff;
+}
+
+/* 文件格式设置 */
+.file-formats-container {
+  margin-top: 8px;
+}
+
+.file-formats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.format-item {
+  margin-bottom: 0;
+  width: 200px;
+}
+
+/* 备份和日志设置 */
+.backup-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 12px;
+}
+
+/* 邮件通知设置 */
+.email-settings-container {
+  margin-top: 24px;
+  padding: 24px;
+  background-color: #fafafa;
+  border-radius: 6px;
+}
+
+/* 安全警告 */
+.security-warning {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.warning-icon {
+  color: #fa8c16;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 重置设置区域 */
+.reset-section {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #fff1f0;
+  border: 1px solid #ffccc7;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reset-hint {
+  flex: 1;
+  font-size: 14px;
+}
+
+/* 表单样式优化 */
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-input-number {
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ant-input:focus,
+.ant-input:hover,
+.ant-select-selector:focus-within,
+.ant-select-selector:hover,
+.ant-input-number:hover,
+.ant-input-number:focus-within {
+  border-color: #1890ff;
+  box-shadow: none;
+}
+
+.ant-input-number-input:focus {
+  box-shadow: none;
+}
+
+/* 按钮样式优化 */
+.ant-btn {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.ant-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.ant-btn-danger:hover {
+  opacity: 0.9;
+}
+
+.ant-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 开关样式 */
+.ant-switch {
+  transition: all 0.3s ease;
+}
+
+.ant-switch-checked {
+  background-color: #1890ff;
+}
+
+/* 折叠面板样式 */
+.ant-collapse-arrow {
+  font-size: 12px;
+}
+
+.ant-collapse-item-active .ant-collapse-arrow {
+  color: #1890ff;
+  transform: rotate(90deg);
+}
+
+/* 标题样式 */
+.ant-typography h5 {
+  margin-bottom: 16px;
+  color: #262626;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .settings-page-container {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .settings-panel .ant-collapse-header {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .settings-panel .ant-collapse-content-box {
+    padding: 16px;
+  }
+
+  .backup-section {
+    flex-direction: column;
+  }
+
+  .backup-section .ant-btn {
+    width: 100%;
+  }
+
+  .email-settings-container {
+    padding: 16px;
+  }
+
+  .security-warning,
+  .reset-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .reset-hint {
+    font-size: 12px;
+  }
+
+  .format-item {
+    width: 100%;
+  }
+
+  .ant-upload {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-page-container {
+    padding: 8px;
+  }
+
+  .settings-panel .ant-collapse-header {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .settings-panel .ant-collapse-content-box {
+    padding: 12px;
+  }
+
+  .ant-form-item {
+    margin-bottom: 12px;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 4px;
+  }
+
+  .ant-typography h5 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .ant-upload-drag-icon {
+    font-size: 24px;
+  }
+
+  .ant-upload-text {
+    font-size: 12px;
+  }
+
+  .ant-upload-hint {
+    font-size: 11px;
+  }
+}
+
+/* 动画效果 */
+.ant-collapse-item {
+  transition: all 0.3s ease;
+}
+
+.ant-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ant-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.ant-btn:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* 加载状态 */
+.ant-btn-loading {
+  opacity: 0.7;
+}
+
+/* 工具提示样式 */
+.ant-tooltip-inner {
+  border-radius: 4px;
+}
+
+/* 自定义滚动条 */
+.ant-collapse-content {
+  scrollbar-width: thin;
+  scrollbar-color: #d9d9d9 #f0f0f0;
+}
+
+.ant-collapse-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ant-collapse-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.ant-collapse-content::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+
+.ant-collapse-content::-webkit-scrollbar-thumb:hover {
+  background-color: #bfbfbf;
+}
